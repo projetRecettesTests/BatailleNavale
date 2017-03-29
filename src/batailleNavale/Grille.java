@@ -3,23 +3,23 @@ package batailleNavale;
 public class Grille
 {
 	private Case[][] grille;
-	private int dim1;
-	private int dim2;
+	private int x;
+	private int y;
 
-	public Grille(int dim1, int dim2)
+	public Grille(int x, int y)
 	{
-		this.dim1 = dim1;
-		this.dim2 = dim2;
-		this.grille = new Case[dim1][dim2];
+		this.x = x;
+		this.y = y;
+		this.grille = new Case[x][y];
 		fillGrille();
 
 	}
 
 	private void fillGrille()
 	{
-		for (int i = 0; i < dim1; i++)
+		for (int i = 0; i < x; i++)
 		{
-			for (int j = 0; j < dim2; j++)
+			for (int j = 0; j < y; j++)
 			{
 				grille[i][j] = new Case(i, j);
 			}
@@ -32,7 +32,8 @@ public class Grille
 
 		try
 		{
-			laCase = grille[x][y];
+			laCase = grille[x-1][y-1];
+			
 		} catch (ArrayIndexOutOfBoundsException e)
 		{
 			System.out.println("La case n'est pas dans la grille !");
@@ -41,14 +42,14 @@ public class Grille
 		return laCase;
 	}
 
-	public int getDim1()
+	public int getX()
 	{
-		return dim1;
+		return x;
 	}
 
-	public int getDim2()
+	public int getY()
 	{
-		return dim2;
+		return y;
 	}
 
 }
