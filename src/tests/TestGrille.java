@@ -1,6 +1,7 @@
 package tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -27,7 +28,6 @@ public class TestGrille
 	{
 		assertNotNull(grille.accessCase(8, 2));
 	}
-	
 	
 	@Test
 	public void caseHorsLigne()

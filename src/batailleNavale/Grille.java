@@ -14,6 +14,10 @@ public class Grille
 		fillGrille();
 
 	}
+	
+	private void placeBateau(Bateau bat, int x, int y){
+		
+	}
 
 	private void fillGrille()
 	{
