@@ -56,16 +56,24 @@ public class Grille
 
 	public Case accessCase(int x, int y)
 	{
-		Case laCase = null;
-
-		try
-		{
+		Case laCase;
+		
+		if(x < 0 || x > this.getX() || y < 0 || y > this.getY()) {
+			laCase = null;
+		}
+		else {
 			laCase = grille[x-1][y-1];
-			
-		} catch (ArrayIndexOutOfBoundsException e)
-		{
 			System.out.println("La case n'est pas dans la grille !");
 		}
+		
+//		try
+//		{
+//			laCase = grille[x-1][y-1];
+//			
+//		} catch (ArrayIndexOutOfBoundsException e)
+//		{
+//			System.out.println("La case n'est pas dans la grille !");
+//		}
 
 		return laCase;
 	}
