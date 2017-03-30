@@ -1,7 +1,6 @@
 package tests;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
