@@ -65,15 +65,6 @@ public class Grille
 			laCase = grille[x-1][y-1];
 			System.out.println("La case n'est pas dans la grille !");
 		}
-		
-//		try
-//		{
-//			laCase = grille[x-1][y-1];
-//			
-//		} catch (ArrayIndexOutOfBoundsException e)
-//		{
-//			System.out.println("La case n'est pas dans la grille !");
-//		}
 
 		return laCase;
 	}

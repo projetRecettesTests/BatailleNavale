@@ -35,9 +35,21 @@ public class testPlaceBateau {
 	}
 	
 	@Test
-	public void testPlaceBateauHorsGrille() {
+	public void testPlaceBateauHorsColonne() {
 		assertEquals(true, grille.placeBateau(bateau1,2,2));
 		assertEquals(false, grille.placeBateau(bateau2,11,20));
+	}
+	
+	@Test
+	public void testPlaceBateauHorsLigne() {
+		assertEquals(true, grille.placeBateau(bateau1,2,2));
+		assertEquals(false, grille.placeBateau(bateau2,10,25));
+	}
+	
+	@Test
+	public void testPlaceBateauHorsGrille() {
+		assertEquals(true, grille.placeBateau(bateau1,2,2));
+		assertEquals(false, grille.placeBateau(bateau2,15,25));
 	}
 
 }
