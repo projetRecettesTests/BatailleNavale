@@ -68,6 +68,29 @@ public class Grille
 
 		return laCase;
 	}
+	
+	public boolean fire(int x, int y){
+		Case laCase = this.accessCase(x, x);
+		if (laCase == null){
+			System.out.println("La case n'est pas dans la grille !");
+			return false;
+		}else if (!laCase.isShot()) {
+			System.out.println("Vous avez déjà tiré içi !");
+			return false;
+		} else if (!laCase.isOccupied()){
+			System.out.println("Raté !");
+			laCase.setShot(true);
+			return true;
+		}else{
+			System.out.println("Touché !");
+			laCase.setShot(true);
+			laCase.getBateau().hit();
+			if (laCase.getBateau().isSunk()){
+				System.out.println("Coulé !");
+			}
+			return true;
+		}
+	}
 
 	public int getX()
 	{
