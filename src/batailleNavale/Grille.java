@@ -35,6 +35,7 @@ public class Grille
 		for(int i = 0; i < bat.getLength(); i++) {
 			for (int j = 0; j < bat.getWidth(); j++){
 				this.accessCase(x+i, y+j).setBateau(bat);
+				System.out.println("case "+ (x+i) + ", " + (x+j) + " placée !");
 			}
 		}
 			
@@ -70,11 +71,11 @@ public class Grille
 	}
 	
 	public boolean fire(int x, int y){
-		Case laCase = this.accessCase(x, x);
+		Case laCase = this.accessCase(x, y);	
+		
 		if (laCase == null){
-			System.out.println("La case n'est pas dans la grille !");
 			return false;
-		}else if (!laCase.isShot()) {
+		}else if (laCase.isShot()) {
 			System.out.println("Vous avez déjà tiré içi !");
 			return false;
 		} else if (!laCase.isOccupied()){

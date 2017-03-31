@@ -50,6 +50,9 @@ public class Game
 				System.out.println("Bateau placé ! :)");
 			}
 			
+			grille.fire(1, 1);
+			grille.fire(2, 1);
+			
 			System.out.println("Voulez-vous ajouter un bateau ? o/n : ");
 		
 		} while (!s.nextLine().equalsIgnoreCase("n"));
