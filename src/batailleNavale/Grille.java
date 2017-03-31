@@ -60,10 +60,10 @@ public class Grille
 		
 		if(x < 0 || x > this.getX() || y < 0 || y > this.getY()) {
 			laCase = null;
+			System.out.println("La case n'est pas dans la grille !");
 		}
 		else {
 			laCase = grille[x-1][y-1];
-			System.out.println("La case n'est pas dans la grille !");
 		}
 
 		return laCase;
