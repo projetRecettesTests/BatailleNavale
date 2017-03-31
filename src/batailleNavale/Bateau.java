@@ -18,7 +18,7 @@ public class Bateau
 		this.width = width;
 		this.nbActiveCases = length * width;
 	}
-	
+
 	public int getId()
 	{
 		return id;

@@ -13,14 +13,12 @@ public class testPlaceBateau {
 	Grille grille;
 	FregateHorizontale bateau1;
 	FregateHorizontale bateau2;
-	FregateHorizontale bateau3;
 	
 	@Before
 	public void setUp() throws Exception {
 		grille = new Grille(10,20);
 		bateau1 = new FregateHorizontale();
 		bateau2 = new FregateHorizontale();
-		bateau3 = new FregateHorizontale();
 	}
 
 	@Test
