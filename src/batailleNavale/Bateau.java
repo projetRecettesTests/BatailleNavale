@@ -50,7 +50,7 @@ public class Bateau
 	}
 
 	public void hit(){
-		this.nbActiveCases = this.nbActiveCases - 1; 
+		this.nbActiveCases--; 
 		if (this.nbActiveCases == 0){
 			this.isSunk = true ;
 		}

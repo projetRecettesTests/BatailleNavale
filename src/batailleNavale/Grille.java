@@ -22,6 +22,7 @@ public class Grille
 	
 	public boolean placeBateau(Bateau bat, int x, int y){
 		Case laCase = null;
+		String message = " Le bateau est bien positionné en cases ";
 		
 		for(int i = 0; i < bat.getLength(); i++) {
 			for (int j = 0; j < bat.getWidth(); j++){
@@ -35,11 +36,12 @@ public class Grille
 		for(int i = 0; i < bat.getLength(); i++) {
 			for (int j = 0; j < bat.getWidth(); j++){
 				this.accessCase(x+i, y+j).setBateau(bat);
-				System.out.println("case "+ (x+i) + ", " + (x+j) + " placée !");
+				message += "[" + (x+i) + "," + (y+j) + "] ";
 			}
 		}
 			
 		this.listeBateaux.add(bat);
+		System.out.println(message + "!\n");
 		return true;
 		
 	}
@@ -61,7 +63,7 @@ public class Grille
 		
 		if(x < 0 || x > this.getX() || y < 0 || y > this.getY()) {
 			laCase = null;
-			System.out.println("La case n'est pas dans la grille !");
+			System.out.println("La case n'est pas dans la grille !\n");
 		}
 		else {
 			laCase = grille[x-1][y-1];
@@ -76,18 +78,18 @@ public class Grille
 		if (laCase == null){
 			return 0;
 		}else if (laCase.isShot()) {
-			System.out.println("Vous avez déjà tiré içi !");
+			System.out.println("Vous avez déjà tiré içi !\n");
 			return 1;
 		} else if (!laCase.isOccupied()){
-			System.out.println("Raté !");
+			System.out.println("Raté !\n");
 			laCase.setShot(true);
 			return 2;
 		}else{
-			System.out.println("Touché !");
+			System.out.println("Touché !\n");
 			laCase.setShot(true);
 			laCase.getBateau().hit();
 			if (laCase.getBateau().isSunk()){
-				System.out.println("Coulé !");
+				System.out.println("Coulé !\n");
 				return 4;
 			}
 			return 3;

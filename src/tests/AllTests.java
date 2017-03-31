@@ -8,7 +8,7 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses(
 {
 	TestGrille.class,
-	testPlaceBateau.class,
+	TestPlaceBateau.class,
 	TestFire.class
 })
 public class AllTests
