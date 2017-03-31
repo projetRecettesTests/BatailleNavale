@@ -8,7 +8,7 @@ import org.junit.Test;
 import batailleNavale.Bateau;
 import batailleNavale.Grille;
 
-public class testPlaceBateau {
+public class TestPlaceBateau {
 
 	Grille grille;
 	Bateau bateau1;
@@ -18,7 +18,7 @@ public class testPlaceBateau {
 	public void setUp() throws Exception {
 		grille = new Grille(10,20);
 		bateau1 = new Bateau("Torpilleur Horizontal", 2, 1);
-		bateau2 = new Bateau("Torpilleur Horizontal", 2, 1);
+		bateau2 = new Bateau("Porte-Avion Horizontal", 5, 1);
 	}
 
 	@Test
