@@ -5,22 +5,23 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import batailleNavale.FregateHorizontale;
+import batailleNavale.Bateau;
+import batailleNavale.TorpilleurHorizontal;
 import batailleNavale.Grille;
 
 public class testPlaceBateau {
 
 	Grille grille;
-	FregateHorizontale bateau1;
-	FregateHorizontale bateau2;
-	FregateHorizontale bateau3;
+	Bateau bateau1;
+	Bateau bateau2;
+	Bateau bateau3;
 	
 	@Before
 	public void setUp() throws Exception {
 		grille = new Grille(10,20);
-		bateau1 = new FregateHorizontale();
-		bateau2 = new FregateHorizontale();
-		bateau3 = new FregateHorizontale();
+		bateau1 = new Bateau("Torpilleur Horizontal", 2, 1);
+		bateau2 = new Bateau("Torpilleur Horizontal", 2, 1);
+		bateau3 = new Bateau("Torpilleur Horizontal", 2, 1);
 	}
 
 	@Test
