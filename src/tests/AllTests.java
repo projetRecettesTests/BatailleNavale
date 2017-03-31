@@ -6,7 +6,11 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses(
-{})
+{
+	TestGrille.class,
+	testPlaceBateau.class,
+	TestFire.class
+})
 public class AllTests
 {
 
