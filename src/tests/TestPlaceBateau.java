@@ -5,49 +5,49 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import batailleNavale.Bateau;
-import batailleNavale.Grille;
+import batailleNavale.Boat;
+import batailleNavale.Grid;
 
 public class TestPlaceBateau {
 
-	Grille grille;
-	Bateau bateau1;
-	Bateau bateau2;
+	Grid grid;
+	Boat bateau1;
+	Boat bateau2;
 	
 	@Before
 	public void setUp() throws Exception {
-		grille = new Grille(10,20);
-		bateau1 = new Bateau("Torpilleur Horizontal", 2, 1);
-		bateau2 = new Bateau("Porte-Avion Horizontal", 5, 1);
+		grid = new Grid(10,20);
+		bateau1 = new Boat("Torpilleur Horizontal", 2, 1);
+		bateau2 = new Boat("Porte-Avion Horizontal", 5, 1);
 	}
 
 	@Test
 	public void testPlaceBateauDispo() {
-		assertEquals(true, grille.placeBateau(bateau1,2,2));
+		assertEquals(true, grid.placeBoat(bateau1,2,2));
 	}
 	
 	@Test
 	public void testPlaceBateauOccupied() {
-		assertEquals(true, grille.placeBateau(bateau1,2,2));
-		assertEquals(false, grille.placeBateau(bateau2,3,2));
+		assertEquals(true, grid.placeBoat(bateau1,2,2));
+		assertEquals(false, grid.placeBoat(bateau2,3,2));
 	}
 	
 	@Test
 	public void testPlaceBateauHorsColonne() {
-		assertEquals(true, grille.placeBateau(bateau1,2,2));
-		assertEquals(false, grille.placeBateau(bateau2,11,20));
+		assertEquals(true, grid.placeBoat(bateau1,2,2));
+		assertEquals(false, grid.placeBoat(bateau2,11,20));
 	}
 	
 	@Test
 	public void testPlaceBateauHorsLigne() {
-		assertEquals(true, grille.placeBateau(bateau1,2,2));
-		assertEquals(false, grille.placeBateau(bateau2,10,25));
+		assertEquals(true, grid.placeBoat(bateau1,2,2));
+		assertEquals(false, grid.placeBoat(bateau2,10,25));
 	}
 	
 	@Test
 	public void testPlaceBateauHorsGrille() {
-		assertEquals(true, grille.placeBateau(bateau1,2,2));
-		assertEquals(false, grille.placeBateau(bateau2,15,25));
+		assertEquals(true, grid.placeBoat(bateau1,2,2));
+		assertEquals(false, grid.placeBoat(bateau2,15,25));
 	}
 
 }

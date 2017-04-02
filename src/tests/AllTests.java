@@ -7,7 +7,7 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses(
 {
-	TestGrille.class,
+	TestGrid.class,
 	TestPlaceBateau.class,
 	TestFire.class
 })

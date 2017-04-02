@@ -2,42 +2,22 @@ package batailleNavale;
 
 public class Case
 {
-	private int x;
-	private int y;
-	private Bateau bateau;
+	private Boat boat;
 	private boolean isOccupied;
 	private boolean isShot;
 
-	public Case(int x, int y)
+	public Case()
 	{
-		this.x = x;
-		this.y = y;
 		this.isOccupied = false;
 		this.isShot = false;
 	}
 
-	public int getX() {
-		return x;
+	public Boat getBoat() {
+		return boat;
 	}
 
-	public void setX(int x) {
-		this.x = x;
-	}
-
-	public int getY() {
-		return y;
-	}
-
-	public void setY(int y) {
-		this.y = y;
-	}
-
-	public Bateau getBateau() {
-		return bateau;
-	}
-
-	public void setBateau(Bateau bateau) {
-		this.bateau = bateau;
+	public void setBoat(Boat boat) {
+		this.boat = boat;
 		this.setOccupied(true);
 	}
 

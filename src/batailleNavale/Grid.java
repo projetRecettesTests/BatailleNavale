@@ -3,31 +3,31 @@ package batailleNavale;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Grille
+public class Grid
 {
-	private Case[][] grille;
+	private Case[][] grid;
 	private int x;
 	private int y;
-	private List<Bateau> listeBateaux;
+	private List<Boat> listBoats;
 
-	public Grille(int x, int y)
+	public Grid(int x, int y)
 	{
 		this.x = x;
 		this.y = y;
-		this.grille = new Case[x][y];
-		this.listeBateaux = new ArrayList<Bateau>();
-		fillGrille();
+		this.grid = new Case[x][y];
+		this.listBoats = new ArrayList<Boat>();
+		fillGrid();
 
 	}
 	
-	public boolean placeBateau(Bateau bat, int x, int y){
-		Case laCase = null;
+	public boolean placeBoat(Boat bat, int x, int y){
+		Case theCase = null;
 		String message = " Le bateau est bien positionné en cases ";
 		
 		for(int i = 0; i < bat.getLength(); i++) {
 			for (int j = 0; j < bat.getWidth(); j++){
-				laCase = this.accessCase(x+i, y+j);
-				if (laCase == null || laCase.isOccupied()){
+				theCase = this.accessCase(x+i, y+j);
+				if (theCase == null || theCase.isOccupied()){
 					return false;	
 				}
 			}
@@ -35,60 +35,60 @@ public class Grille
 		
 		for(int i = 0; i < bat.getLength(); i++) {
 			for (int j = 0; j < bat.getWidth(); j++){
-				this.accessCase(x+i, y+j).setBateau(bat);
+				this.accessCase(x+i, y+j).setBoat(bat);
 				message += "[" + (x+i) + "," + (y+j) + "] ";
 			}
 		}
 			
-		this.listeBateaux.add(bat);
+		this.listBoats.add(bat);
 		System.out.println(message + "!\n");
 		return true;
 		
 	}
 
-	private void fillGrille()
+	private void fillGrid()
 	{
 		for (int i = 0; i < x; i++)
 		{
 			for (int j = 0; j < y; j++)
 			{
-				grille[i][j] = new Case(i, j);
+				grid[i][j] = new Case();
 			}
 		}
 	}
 
 	public Case accessCase(int x, int y)
 	{
-		Case laCase;
+		Case theCase;
 		
 		if(x < 0 || x > this.getX() || y < 0 || y > this.getY()) {
-			laCase = null;
+			theCase = null;
 			System.out.println("La case n'est pas dans la grille !\n");
 		}
 		else {
-			laCase = grille[x-1][y-1];
+			theCase = grid[x-1][y-1];
 		}
 
-		return laCase;
+		return theCase;
 	}
 	
 	public int fire(int x, int y){
-		Case laCase = this.accessCase(x, y);	
+		Case theCase = this.accessCase(x, y);	
 		
-		if (laCase == null){
+		if (theCase == null){
 			return 0;
-		}else if (laCase.isShot()) {
+		}else if (theCase.isShot()) {
 			System.out.println("Vous avez déjà tiré içi !\n");
 			return 1;
-		} else if (!laCase.isOccupied()){
+		} else if (!theCase.isOccupied()){
 			System.out.println("Raté !\n");
-			laCase.setShot(true);
+			theCase.setShot(true);
 			return 2;
 		}else{
 			System.out.println("Touché !\n");
-			laCase.setShot(true);
-			laCase.getBateau().hit();
-			if (laCase.getBateau().isSunk()){
+			theCase.setShot(true);
+			theCase.getBoat().hit();
+			if (theCase.getBoat().isSunk()){
 				System.out.println("Coulé !\n");
 				return 4;
 			}
